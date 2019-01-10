@@ -1,0 +1,162 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BUTTON_WIDTH	src/com/litaook/lottery/Lucky.java	/^	final static int BUTTON_WIDTH = 200;$/;"	f	class:Lucky
+CopyFile	src/com/litaook/lottery/util/CopyFile.java	/^public class CopyFile {$/;"	c
+DBConn	src/com/litaook/lottery/db/DBConn.java	/^	private DBConn() {$/;"	m	class:DBConn	file:
+DBConn	src/com/litaook/lottery/db/DBConn.java	/^public class DBConn {$/;"	c
+DBOp	src/com/litaook/lottery/db/DBOp.java	/^public class DBOp {$/;"	c
+DISPLAY_MARGIN	src/com/litaook/lottery/Lucky.java	/^	final static int DISPLAY_MARGIN = 20;$/;"	f	class:Lucky
+DOWN_HEIGHT	src/com/litaook/lottery/Lucky.java	/^	final static int DOWN_HEIGHT = 100;$/;"	f	class:Lucky
+DURATION	src/com/litaook/lottery/Lucky.java	/^	final static int DURATION = 50;$/;"	f	class:Lucky
+FRAME_HEIGHT	src/com/litaook/lottery/ResizeImage.java	/^	static final int FRAME_HEIGHT = 600;$/;"	f	class:ResizeImage
+FRAME_WIDTH	src/com/litaook/lottery/ResizeImage.java	/^	static final int FRAME_WIDTH = 600;$/;"	f	class:ResizeImage
+GameMath	src/com/litaook/lottery/GameMath.java	/^	public GameMath() {$/;"	m	class:GameMath
+GameMath	src/com/litaook/lottery/GameMath.java	/^public class GameMath {$/;"	c
+IMAGE_DIR	src/com/litaook/lottery/Lucky.java	/^	final static String IMAGE_DIR = "images\/";$/;"	f	class:Lucky
+LOCAL_X	src/com/litaook/lottery/ResizeImage.java	/^	static final int LOCAL_X = 300;$/;"	f	class:ResizeImage
+LOCAL_Y	src/com/litaook/lottery/ResizeImage.java	/^	static final int LOCAL_Y = 10;$/;"	f	class:ResizeImage
+Lucky	src/com/litaook/lottery/Lucky.java	/^	public Lucky() throws IOException {$/;"	m	class:Lucky
+Lucky	src/com/litaook/lottery/Lucky.java	/^public class Lucky implements ActionListener {$/;"	c
+MARGIN	src/com/litaook/lottery/Lucky.java	/^	final static int MARGIN = 10;$/;"	f	class:Lucky
+NORMAL_MARK	src/com/litaook/lottery/db/DBOp.java	/^	public static final int NORMAL_MARK = 0;$/;"	f	class:DBOp
+PicPro	src/com/litaook/lottery/PicPro.java	/^	PicPro() {$/;"	m	class:PicPro
+PicPro	src/com/litaook/lottery/PicPro.java	/^public class PicPro extends WindowAdapter implements ActionListener {$/;"	c
+RESULT_WIDTH	src/com/litaook/lottery/Lucky.java	/^	final static int RESULT_WIDTH = 400;$/;"	f	class:Lucky
+RandRange	src/com/litaook/lottery/GameMath.java	/^	public int RandRange(int min, int max) {$/;"	m	class:GameMath
+ResizeImage	src/com/litaook/lottery/ResizeImage.java	/^	ResizeImage() {$/;"	m	class:ResizeImage
+ResizeImage	src/com/litaook/lottery/ResizeImage.java	/^public class ResizeImage extends WindowAdapter implements ActionListener {$/;"	c
+TIME_OUT	src/com/litaook/lottery/db/DBOp.java	/^	public static final int TIME_OUT = 5;$/;"	f	class:DBOp
+Test	src/com/litaook/lottery/Test.java	/^public class Test {$/;"	c
+Tools	src/com/litaook/lottery/util/Tools.java	/^public class Tools {$/;"	c
+WELCOME_IMAGE	src/com/litaook/lottery/Lucky.java	/^	final static String WELCOME_IMAGE = "welcome\/start.jpg";$/;"	f	class:Lucky
+WINNER_DIR	src/com/litaook/lottery/Lucky.java	/^	final static String WINNER_DIR = "winners\/";$/;"	f	class:Lucky
+WIN_MARK	src/com/litaook/lottery/db/DBOp.java	/^	public static final int WIN_MARK = 1;$/;"	f	class:DBOp
+actionPerformed	src/com/litaook/lottery/Lucky.java	/^	public void actionPerformed(ActionEvent event) {$/;"	m	class:Lucky
+actionPerformed	src/com/litaook/lottery/PicPro.java	/^	public void actionPerformed(ActionEvent e) {$/;"	m	class:PicPro
+actionPerformed	src/com/litaook/lottery/ResizeImage.java	/^	public void actionPerformed(ActionEvent e) {$/;"	m	class:ResizeImage
+addWidgets	src/com/litaook/lottery/Lucky.java	/^	private void addWidgets() throws IOException {$/;"	m	class:Lucky	file:
+allByRandom	src/com/litaook/lottery/db/DBOp.java	/^	public static List<String> allByRandom(Connection conn) {$/;"	m	class:DBOp
+allWinners	src/com/litaook/lottery/db/DBOp.java	/^	public static Map<String,String> allWinners(Connection conn) {$/;"	m	class:DBOp
+button	src/com/litaook/lottery/PicPro.java	/^	JButton button, button1, button2;$/;"	f	class:PicPro
+button1	src/com/litaook/lottery/PicPro.java	/^	JButton button, button1, button2;$/;"	f	class:PicPro
+button2	src/com/litaook/lottery/PicPro.java	/^	JButton button, button1, button2;$/;"	f	class:PicPro
+checkDstPath	src/com/litaook/lottery/ResizeImage.java	/^	boolean checkDstPath() {$/;"	m	class:ResizeImage
+checkNum	src/com/litaook/lottery/PicPro.java	/^	public static boolean checkNum(String s) { \/\/ 判断String是否为可转化为数字的字符串$/;"	m	class:PicPro
+checkNum	src/com/litaook/lottery/util/Tools.java	/^	public static boolean checkNum(String s) {$/;"	m	class:Tools
+checkScreenSize	src/com/litaook/lottery/Lucky.java	/^	private void checkScreenSize() {$/;"	m	class:Lucky	file:
+checkSrcPath	src/com/litaook/lottery/ResizeImage.java	/^	boolean checkSrcPath() {$/;"	m	class:ResizeImage
+choose	src/com/litaook/lottery/Test.java	/^	public static void choose() {$/;"	m	class:Test
+chooseDir	src/com/litaook/lottery/ResizeImage.java	/^	public static String chooseDir() {$/;"	m	class:ResizeImage
+com.litaook.lottery	src/com/litaook/lottery/GameMath.java	/^package com.litaook.lottery;$/;"	p
+com.litaook.lottery	src/com/litaook/lottery/Lucky.java	/^package com.litaook.lottery;$/;"	p
+com.litaook.lottery	src/com/litaook/lottery/PicPro.java	/^package com.litaook.lottery;$/;"	p
+com.litaook.lottery	src/com/litaook/lottery/ResizeImage.java	/^package com.litaook.lottery;$/;"	p
+com.litaook.lottery	src/com/litaook/lottery/Test.java	/^package com.litaook.lottery;$/;"	p
+com.litaook.lottery.db	src/com/litaook/lottery/db/DBConn.java	/^package com.litaook.lottery.db;$/;"	p
+com.litaook.lottery.db	src/com/litaook/lottery/db/DBOp.java	/^package com.litaook.lottery.db;$/;"	p
+com.litaook.lottery.util	src/com/litaook/lottery/util/CopyFile.java	/^package com.litaook.lottery.util;$/;"	p
+com.litaook.lottery.util	src/com/litaook/lottery/util/Tools.java	/^package com.litaook.lottery.util;$/;"	p
+conn	src/com/litaook/lottery/db/DBConn.java	/^	private Connection conn = null;$/;"	f	class:DBConn	file:
+convert	src/com/litaook/lottery/PicPro.java	/^	public static BufferedImage convert(int width, int height,$/;"	m	class:PicPro
+convert	src/com/litaook/lottery/ResizeImage.java	/^	public static BufferedImage convert(int width, int height,$/;"	m	class:ResizeImage
+convertButton	src/com/litaook/lottery/ResizeImage.java	/^	JButton convertButton, srcPathButton, dstPathButton;$/;"	f	class:ResizeImage
+convertButton	src/com/litaook/lottery/ResizeImage.java	/^	void convertButton() {$/;"	m	class:ResizeImage
+copy	src/com/litaook/lottery/util/CopyFile.java	/^	public static long copy(String srcFile, String dstFile)$/;"	m	class:CopyFile
+dbc	src/com/litaook/lottery/db/DBConn.java	/^	private static DBConn dbc = null;$/;"	f	class:DBConn	file:
+displayPanel	src/com/litaook/lottery/Lucky.java	/^	JPanel mainPanel, selectPanel, displayPanel, resultPanel;$/;"	f	class:Lucky
+dstPath	src/com/litaook/lottery/ResizeImage.java	/^	JTextField srcPath, dstPath, newWidth, newHeight;$/;"	f	class:ResizeImage
+dstPathButton	src/com/litaook/lottery/ResizeImage.java	/^	JButton convertButton, srcPathButton, dstPathButton;$/;"	f	class:ResizeImage
+dstPathLabel	src/com/litaook/lottery/ResizeImage.java	/^	JLabel srcPathLabel, dstPathLabel, newWidthLabel, newHeightLabel;$/;"	f	class:ResizeImage
+dstPathPanel	src/com/litaook/lottery/ResizeImage.java	/^	JPanel mainPanel, srcPathPanel, dstPathPanel, newSizePanel;$/;"	f	class:ResizeImage
+errFont	src/com/litaook/lottery/ResizeImage.java	/^	Font errFont = new Font("黑体", Font.BOLD, 14);$/;"	f	class:ResizeImage
+fileChooser	src/com/litaook/lottery/ResizeImage.java	/^	JFileChooser fileChooser = new JFileChooser(".");$/;"	f	class:ResizeImage
+filein	src/com/litaook/lottery/PicPro.java	/^	File filein;$/;"	f	class:PicPro
+filelist	src/com/litaook/lottery/PicPro.java	/^	File[] filelist;$/;"	f	class:PicPro
+fileout	src/com/litaook/lottery/PicPro.java	/^	File fileout;$/;"	f	class:PicPro
+flag_in	src/com/litaook/lottery/PicPro.java	/^	boolean flag_in;$/;"	f	class:PicPro
+flag_num	src/com/litaook/lottery/PicPro.java	/^	boolean flag_num;$/;"	f	class:PicPro
+flag_out	src/com/litaook/lottery/PicPro.java	/^	boolean flag_out;$/;"	f	class:PicPro
+font	src/com/litaook/lottery/ResizeImage.java	/^	Font font = new Font("宋体", Font.PLAIN, 12);$/;"	f	class:ResizeImage
+font1	src/com/litaook/lottery/PicPro.java	/^	Font font1 = new Font("宋体", Font.PLAIN, 20);$/;"	f	class:PicPro
+font2	src/com/litaook/lottery/PicPro.java	/^	Font font2 = new Font("宋体", Font.PLAIN, 16);$/;"	f	class:PicPro
+frame	src/com/litaook/lottery/PicPro.java	/^	JFrame frame;$/;"	f	class:PicPro
+frame	src/com/litaook/lottery/ResizeImage.java	/^	JFrame frame;$/;"	f	class:ResizeImage
+getConnect	src/com/litaook/lottery/db/DBConn.java	/^	public Connection getConnect() throws Exception {$/;"	m	class:DBConn
+getInstance	src/com/litaook/lottery/db/DBConn.java	/^	public static DBConn getInstance() {$/;"	m	class:DBConn
+getOpenDirPath	src/com/litaook/lottery/ResizeImage.java	/^	String getOpenDirPath() {$/;"	m	class:ResizeImage
+getOrder	src/com/litaook/lottery/GameMath.java	/^	public int getOrder(int min, int max, int prev) {$/;"	m	class:GameMath
+getTimeString	src/com/litaook/lottery/db/DBOp.java	/^	public static String getTimeString() {$/;"	m	class:DBOp
+height	src/com/litaook/lottery/PicPro.java	/^	int height;$/;"	f	class:PicPro
+height	src/com/litaook/lottery/ResizeImage.java	/^	int height = 0;$/;"	f	class:ResizeImage
+imageDirExists	src/com/litaook/lottery/Lucky.java	/^	private boolean imageDirExists() {$/;"	m	class:Lucky	file:
+imageIcons	src/com/litaook/lottery/Lucky.java	/^	List<ImageIcon> imageIcons = new ArrayList<ImageIcon>();$/;"	f	class:Lucky
+imageNames	src/com/litaook/lottery/Lucky.java	/^	List<String> imageNames = new ArrayList<String>();$/;"	f	class:Lucky
+init	src/com/litaook/lottery/db/DBOp.java	/^	public static void init(Connection conn) {$/;"	m	class:DBOp
+label1	src/com/litaook/lottery/PicPro.java	/^	JLabel label1, label2, label3, label4;$/;"	f	class:PicPro
+label2	src/com/litaook/lottery/PicPro.java	/^	JLabel label1, label2, label3, label4;$/;"	f	class:PicPro
+label3	src/com/litaook/lottery/PicPro.java	/^	JLabel label1, label2, label3, label4;$/;"	f	class:PicPro
+label4	src/com/litaook/lottery/PicPro.java	/^	JLabel label1, label2, label3, label4;$/;"	f	class:PicPro
+log	src/com/litaook/lottery/Lucky.java	/^	static Logger log = LogManager.getLogger("Lucky");$/;"	f	class:Lucky
+log	src/com/litaook/lottery/util/CopyFile.java	/^	static Logger log = LogManager.getLogger("CopyFile");$/;"	f	class:CopyFile
+main	src/com/litaook/lottery/Lucky.java	/^	public static void main(String[] args) {$/;"	m	class:Lucky
+main	src/com/litaook/lottery/PicPro.java	/^	public static void main(String[] args) throws Exception {$/;"	m	class:PicPro
+main	src/com/litaook/lottery/ResizeImage.java	/^	public static void main(String[] args) throws Exception {$/;"	m	class:ResizeImage
+main	src/com/litaook/lottery/Test.java	/^	public static void main(String[] args) {$/;"	m	class:Test
+main	src/com/litaook/lottery/util/CopyFile.java	/^	public static void main(String[] args) {$/;"	m	class:CopyFile
+mainPanel	src/com/litaook/lottery/Lucky.java	/^	JPanel mainPanel, selectPanel, displayPanel, resultPanel;$/;"	f	class:Lucky
+mainPanel	src/com/litaook/lottery/ResizeImage.java	/^	JPanel mainPanel, srcPathPanel, dstPathPanel, newSizePanel;$/;"	f	class:ResizeImage
+mark	src/com/litaook/lottery/db/DBOp.java	/^	public static int mark(Connection conn, String imageName) {$/;"	m	class:DBOp
+moveLuckyImage	src/com/litaook/lottery/Lucky.java	/^	private void moveLuckyImage(String imageName) throws IOException {$/;"	m	class:Lucky	file:
+newHeight	src/com/litaook/lottery/ResizeImage.java	/^	JTextField srcPath, dstPath, newWidth, newHeight;$/;"	f	class:ResizeImage
+newHeightLabel	src/com/litaook/lottery/ResizeImage.java	/^	JLabel srcPathLabel, dstPathLabel, newWidthLabel, newHeightLabel;$/;"	f	class:ResizeImage
+newSizePanel	src/com/litaook/lottery/ResizeImage.java	/^	JPanel mainPanel, srcPathPanel, dstPathPanel, newSizePanel;$/;"	f	class:ResizeImage
+newWidth	src/com/litaook/lottery/ResizeImage.java	/^	JTextField srcPath, dstPath, newWidth, newHeight;$/;"	f	class:ResizeImage
+newWidthLabel	src/com/litaook/lottery/ResizeImage.java	/^	JLabel srcPathLabel, dstPathLabel, newWidthLabel, newHeightLabel;$/;"	f	class:ResizeImage
+panel1	src/com/litaook/lottery/PicPro.java	/^	JPanel panel1, panel3, panel4, panel5;$/;"	f	class:PicPro
+panel3	src/com/litaook/lottery/PicPro.java	/^	JPanel panel1, panel3, panel4, panel5;$/;"	f	class:PicPro
+panel4	src/com/litaook/lottery/PicPro.java	/^	JPanel panel1, panel3, panel4, panel5;$/;"	f	class:PicPro
+panel5	src/com/litaook/lottery/PicPro.java	/^	JPanel panel1, panel3, panel4, panel5;$/;"	f	class:PicPro
+phaseBlank1	src/com/litaook/lottery/Lucky.java	/^	JLabel phaseIconLabel = null, phaseResult = null, phaseBlank1 = null,$/;"	f	class:Lucky
+phaseBlank2	src/com/litaook/lottery/Lucky.java	/^			phaseBlank2 = null;$/;"	f	class:Lucky
+phaseChoice	src/com/litaook/lottery/Lucky.java	/^	JButton phaseChoice = null;$/;"	f	class:Lucky
+phaseIconLabel	src/com/litaook/lottery/Lucky.java	/^	JLabel phaseIconLabel = null, phaseResult = null, phaseBlank1 = null,$/;"	f	class:Lucky
+phaseResult	src/com/litaook/lottery/Lucky.java	/^	JLabel phaseIconLabel = null, phaseResult = null, phaseBlank1 = null,$/;"	f	class:Lucky
+random	src/com/litaook/lottery/GameMath.java	/^	private Random random;$/;"	f	class:GameMath	file:
+random	src/com/litaook/lottery/Lucky.java	/^	private int random(int max) {$/;"	m	class:Lucky	file:
+readImagesToArrays	src/com/litaook/lottery/Lucky.java	/^	private void readImagesToArrays() throws IOException {$/;"	m	class:Lucky	file:
+real_num_images	src/com/litaook/lottery/Lucky.java	/^	int real_num_images = 0;$/;"	f	class:Lucky
+remove	src/com/litaook/lottery/db/DBOp.java	/^	public static int remove(Connection conn, String imageName) {$/;"	m	class:DBOp
+resultPanel	src/com/litaook/lottery/Lucky.java	/^	JPanel mainPanel, selectPanel, displayPanel, resultPanel;$/;"	f	class:Lucky
+rootDir	src/com/litaook/lottery/Lucky.java	/^	String rootDir = new StringBuffer(System.getProperty("user.dir")).append($/;"	f	class:Lucky
+rootDir	src/com/litaook/lottery/db/DBConn.java	/^	String rootDir = System.getProperty("user.dir");$/;"	f	class:DBConn
+run	src/com/litaook/lottery/Lucky.java	/^	boolean run = false;$/;"	f	class:Lucky
+save	src/com/litaook/lottery/db/DBOp.java	/^	public static int save(Connection conn, List<String> images) {$/;"	m	class:DBOp
+screenHeight	src/com/litaook/lottery/Lucky.java	/^	int screenHeight = 0;$/;"	f	class:Lucky
+screenWidth	src/com/litaook/lottery/Lucky.java	/^	int screenWidth = 0;$/;"	f	class:Lucky
+selectPanel	src/com/litaook/lottery/Lucky.java	/^	JPanel mainPanel, selectPanel, displayPanel, resultPanel;$/;"	f	class:Lucky
+setDstPath	src/com/litaook/lottery/ResizeImage.java	/^	void setDstPath() {$/;"	m	class:ResizeImage
+setNewSize	src/com/litaook/lottery/ResizeImage.java	/^	void setNewSize() {$/;"	m	class:ResizeImage
+setNewWidthHeight	src/com/litaook/lottery/ResizeImage.java	/^	void setNewWidthHeight() {$/;"	m	class:ResizeImage
+setPanelsSize	src/com/litaook/lottery/Lucky.java	/^	private void setPanelsSize() {$/;"	m	class:Lucky	file:
+setSrcPath	src/com/litaook/lottery/ResizeImage.java	/^	void setSrcPath() {$/;"	m	class:ResizeImage
+setTxtArea	src/com/litaook/lottery/ResizeImage.java	/^	void setTxtArea() {$/;"	m	class:ResizeImage
+srcPath	src/com/litaook/lottery/ResizeImage.java	/^	JTextField srcPath, dstPath, newWidth, newHeight;$/;"	f	class:ResizeImage
+srcPathButton	src/com/litaook/lottery/ResizeImage.java	/^	JButton convertButton, srcPathButton, dstPathButton;$/;"	f	class:ResizeImage
+srcPathLabel	src/com/litaook/lottery/ResizeImage.java	/^	JLabel srcPathLabel, dstPathLabel, newWidthLabel, newHeightLabel;$/;"	f	class:ResizeImage
+srcPathPanel	src/com/litaook/lottery/ResizeImage.java	/^	JPanel mainPanel, srcPathPanel, dstPathPanel, newSizePanel;$/;"	f	class:ResizeImage
+ta	src/com/litaook/lottery/PicPro.java	/^	JTextArea ta;$/;"	f	class:PicPro
+tf1	src/com/litaook/lottery/PicPro.java	/^	JTextField tf1, tf2, tf3, tf4;$/;"	f	class:PicPro
+tf2	src/com/litaook/lottery/PicPro.java	/^	JTextField tf1, tf2, tf3, tf4;$/;"	f	class:PicPro
+tf3	src/com/litaook/lottery/PicPro.java	/^	JTextField tf1, tf2, tf3, tf4;$/;"	f	class:PicPro
+tf4	src/com/litaook/lottery/PicPro.java	/^	JTextField tf1, tf2, tf3, tf4;$/;"	f	class:PicPro
+txtArea	src/com/litaook/lottery/ResizeImage.java	/^	JTextArea txtArea;$/;"	f	class:ResizeImage
+width	src/com/litaook/lottery/PicPro.java	/^	int width;$/;"	f	class:PicPro
+width	src/com/litaook/lottery/ResizeImage.java	/^	int width = 0;$/;"	f	class:ResizeImage
+windowClosing	src/com/litaook/lottery/PicPro.java	/^	public void windowClosing(WindowEvent e) {$/;"	m	class:PicPro
+windowClosing	src/com/litaook/lottery/ResizeImage.java	/^	public void windowClosing(WindowEvent e) {$/;"	m	class:ResizeImage
+writeToDstFile	src/com/litaook/lottery/ResizeImage.java	/^	void writeToDstFile(RenderedImage ri, String format, File outFullPath) {$/;"	m	class:ResizeImage
+wzw	src/com/litaook/lottery/PicPro.java	/^	File wzw = new File("wzw");$/;"	f	class:PicPro
