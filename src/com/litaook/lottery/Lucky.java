@@ -77,6 +77,8 @@ public class Lucky implements ActionListener {
 	final static String IMAGE_DIR = "images/";
 	final static String WINNER_DIR = "winners/";
 	final static String WELCOME_IMAGE = "welcome/start.jpg";
+	Font bigFont = new Font("Arial", Font.BOLD, 60);
+	Font startFont = new Font("Arial", Font.BOLD, 32);
 
 	// Constructor
 	public Lucky() throws IOException {
@@ -94,7 +96,8 @@ public class Lucky implements ActionListener {
 		// 添加到主面板中
 		mainPanel.add(selectPanel);
 		mainPanel.add(displayPanel);
-		mainPanel.add(resultPanel);
+		//displayPanel.add(selectPanel);
+		//mainPanel.add(resultPanel);
 
 		// 添加插件，读取所有图片入数组
 		addWidgets();
@@ -149,7 +152,8 @@ public class Lucky implements ActionListener {
 		// 抽奖按钮区域面板
 		selectPanel = new JPanel();
 		// 抽奖和暂停按键
-		x = screenWidth / 2 - BUTTON_WIDTH;
+		//x = screenWidth / 2 - BUTTON_WIDTH;
+		x = (screenWidth-DISPLAY_MARGIN*2-BUTTON_WIDTH)/2+DISPLAY_MARGIN;
 		y = screenHeight - MARGIN * 2 - DOWN_HEIGHT;
 		w = BUTTON_WIDTH;
 		h = DOWN_HEIGHT;
@@ -165,105 +169,13 @@ public class Lucky implements ActionListener {
 		displayPanel.setBounds(x, y, w, h);
 
 		// 获奖显示区域面板
-		resultPanel = new JPanel();
+		//resultPanel = new JPanel();
 		// 获奖显示区域大小
-		x = screenWidth / 2 + MARGIN;
-		y = screenHeight - MARGIN * 2 - DOWN_HEIGHT;
-		w = RESULT_WIDTH;
-		h = DOWN_HEIGHT;
-		resultPanel.setBounds(x, y, w, h);
-		log.debug("end");
-	}
-
-	/**
-	 * 检查图片文件夹是否存在
-	 * 
-	 * @return
-	 */
-	private boolean imageDirExists() {
-		log.debug("检查images目录是否存在 - start");
-		boolean res = false;
-		File dir = new File(new StringBuffer(rootDir).append(IMAGE_DIR)
-				.toString());
-		if (dir.exists() && dir.isDirectory()) {
-			res = true;
-			log.debug("images目录正常!");
-		} else {
-			log.debug("images目录不存在!");
-		}
-		log.debug("end");
-		return res;
-	}
-
-	/**
-	 * 读取图片并存入指定数组
-	 * 
-	 * @throws IOException
-	 */
-	private void readImagesToArrays() throws IOException {
-
-		log.debug("读取图片并存入数组 - start");
-
-		// 获取图片路径，并存入数组
-		String path = new StringBuffer(rootDir).append(IMAGE_DIR).toString();
-		log.debug(new StringBuffer("获取图片路径 : ").append(path));
-
-		// 避免因找不到图片目录而出现空指针异常
-		if (!imageDirExists()) {
-			throw new IOException(new StringBuffer("图片目录images读取失败 : ").append(
-					path).toString());
-		}
-
-		// 读取图片
-		File dir = new File(path);
-		log.debug("读取图片...");
-		File[] files = dir.listFiles();
-		log.debug(new StringBuffer("文件总数量 : ").append(files.length));
-		log.debug("开始循环读取图片...");
-		for (int i = 0; i < files.length; i++) {
-			if (files[i].isDirectory()) {
-				log.debug(new StringBuffer("忽略子目录 : ").append(files[i]
-						.getPath()));
-				continue; // 忽略目录
-			}
-			// 文件名
-			String fileName = files[i].getName();
-			// 忽略系统文件
-			if (fileName.equals("Thumbs.db") || fileName.startsWith(".")) {
-				log.debug(new StringBuffer("忽略系统文件 : ").append(fileName));
-				continue;
-			}
-
-			// 文件名后缀(转换为小写,否则不能兼容大写后缀名)
-			String suffix = fileName.substring(fileName.lastIndexOf(".") + 1)
-					.toLowerCase();
-
-			// 忽略非jpg格式图片
-			if (!suffix.equals("jpg") && !suffix.equals("JPG")) {
-				log.info(new StringBuffer("忽略非jpg文件 : ").append(fileName));
-				continue;
-			}
-
-			// 读入图
-			ImageIcon icon = null;
-			// 可直接使用files[i], 无需构造URL
-			BufferedImage bi = ImageIO.read(files[i]);
-			if (bi == null) {
-				throw new IOException(new StringBuffer("ImageIO读取图片文件失败 : ")
-						.append(fileName).append(", 不是jpg图片格式？").toString());
-			}
-			log.debug("转换成ImageIcon对象...");
-			icon = new ImageIcon(bi);
-
-			// 图片入队列
-			imageIcons.add(icon);
-			log.debug("icon加入imageIcon队列 ");
-			// 图片名称入数组
-			imageNames.add(fileName);
-			log.debug("fileName加入imageNames队列");
-		}
-		real_num_images = imageIcons.size();
-		log.debug(new StringBuffer("有效图片数量 : ").append(real_num_images));
+		//x = screenWidth / 2 + MARGIN;
+		//y = screenHeight - MARGIN * 2 - DOWN_HEIGHT;
+		//w = RESULT_WIDTH;
+		//h = DOWN_HEIGHT;
+		//resultPanel.setBounds(x, y, w, h);
 		log.debug("end");
 	}
 
@@ -274,8 +186,6 @@ public class Lucky implements ActionListener {
 	 */
 	private void addWidgets() throws IOException {
 		log.debug("创建插件 - start");
-		// 读取图片
-		//readImagesToArrays();
 
 		ReadTextFileToArray();
 
@@ -295,6 +205,13 @@ public class Lucky implements ActionListener {
 
 		// 创建控制按键
 		phaseChoice = new JButton("开始/停止");
+
+		phaseResult.setFont(bigFont);
+		//int vert_size =  screenHeight - DOWN_HEIGHT - MARGIN * 3;
+		//phaseResult.setLayoutY(vert_size/2-DOWN_HEIGHT);
+		phaseBlank1.setFont(bigFont);
+		phaseBlank2.setFont(bigFont);
+		phaseChoice.setFont(startFont);
 
 		// 显示第一张欢迎图片
 		// 读入图
@@ -317,22 +234,23 @@ public class Lucky implements ActionListener {
 				BorderFactory.createTitledBorder("操作区"),
 				BorderFactory.createEmptyBorder(5, 5, 5, 5)));
 
-		resultPanel.setBorder(BorderFactory.createCompoundBorder(
-				BorderFactory.createTitledBorder("结果区"),
-				BorderFactory.createEmptyBorder(5, 5, 5, 5)));
+		//resultPanel.setBorder(BorderFactory.createCompoundBorder(
+		//BorderFactory.createTitledBorder("结果区"),
+		//BorderFactory.createEmptyBorder(5, 5, 5, 5)));
 
 		// 图片区域设置边框
 		displayPanel.setBorder(BorderFactory.createCompoundBorder(
-				BorderFactory.createTitledBorder("照片列表"),
+				BorderFactory.createTitledBorder("抽奖区"),
 				BorderFactory.createEmptyBorder(5, 5, 5, 5)));
 
 		// 在显示面板上添加各
-		selectPanel.add(phaseChoice);
+		//selectPanel.add(phaseChoice);
 		//displayPanel.add(phaseIconLabel);
 		//resultPanel.add(phaseBlank1);
 		displayPanel.add(phaseBlank1);
 		displayPanel.add(phaseResult);
 		displayPanel.add(phaseBlank2);
+		selectPanel.add(phaseChoice);
 		//resultPanel.add(phaseResult);
 		//resultPanel.add(phaseBlank2);
 		log.debug("各显示Panel设置完毕");
@@ -405,18 +323,18 @@ public class Lucky implements ActionListener {
 				public void run() {
 					while (run) {
 
-						// 随机显示图片
+						// 随机显示
 						int index = random(real_num_images);
-						log.debug(new StringBuffer("随机抽取到的图片序号 : ")
+						log.debug(new StringBuffer("随机抽取到的序号 : ")
 								.append(index));
 						//phaseIconLabel.setIcon(imageIcons.get(index));
-						phaseIconLabel.setText(imageNames.get(index));
+						//phaseIconLabel.setText(imageNames.get(index));
 						phaseBlank1.setText("");
 						// 显示图片名称，不要扩展名
 						try {
 							String imageName = imageNames.get(index);
 							phaseResult.setText(imageName);//.substring(0,
-									//imageName.lastIndexOf(".")));
+									////imageName.lastIndexOf(".")));
 							phaseBlank2.setText("");
 						} catch (Exception e) {
 							e.printStackTrace();
@@ -439,30 +357,6 @@ public class Lucky implements ActionListener {
 		}
 		log.debug("end");
 	}
-
-	/**
-	 * 删除获奖人照片
-	 */
-	private void moveLuckyImage(String imageName) throws IOException {
-		log.debug("移动获奖图片 - start");
-		String imageFileName = new StringBuffer(imageName).append(".jpg")
-				.toString();
-		String srcFile = new StringBuffer(rootDir).append(IMAGE_DIR)
-				.append(imageFileName).toString();
-		// System.out.println(path);
-		File f = new File(srcFile);
-		if (f.exists()) {
-			// 先复制中奖照片到winning目录
-			String dstFile = srcFile.replaceAll(IMAGE_DIR, WINNER_DIR);
-			log.debug(new StringBuffer("获奖照片转移为 : ").append(dstFile));
-			CopyFile.copy(srcFile, dstFile);
-			log.debug("图片复制完毕");
-			// 再删除images目录中的中奖照片
-			f.delete();
-			log.debug(new StringBuffer("删除原图片 : ").append(srcFile));
-		}
-		log.debug("end");
-	} 
 
 /*
 	public static void setUIFont(FontUIResource f) {
