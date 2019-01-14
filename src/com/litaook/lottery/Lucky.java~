@@ -25,7 +25,7 @@ import javax.swing.UIManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.litaook.lottery.util.CopyFile;
+//import com.litaook.lottery.util.CopyFile;
 
 /**
  * 抽奖主程序 annual_party_new是备用照片目录，存放所有待抽奖人照片，建议使用人名作为文件名；<br/>
@@ -70,13 +70,17 @@ public class Lucky implements ActionListener {
 	// 按键和结果框公用高度
 	final static int DOWN_HEIGHT = 100;
 
+	// get the system separator
+	String separator = System.getProperty("file.separator");
+
 	// 工作目录
 	String rootDir = new StringBuffer(System.getProperty("user.dir")).append(
 			File.separator).toString();
 	// 图片目录
 	final static String IMAGE_DIR = "images/";
 	final static String WINNER_DIR = "winners/";
-	final static String WELCOME_IMAGE = "welcome/start.jpg";
+	String WELCOME_IMAGE = new StringBuffer("welcome").append(separator).append("start.jpg").toString();
+	String input_file_name = new StringBuffer("images").append(separator).append("inputfile.txt");
 	Font bigFont = new Font("Arial", Font.BOLD, 60);
 	Font startFont = new Font("Arial", Font.BOLD, 32);
 
@@ -110,7 +114,7 @@ public class Lucky implements ActionListener {
 	 */
 	private void ReadTextFileToArray (){
 		StringBuilder sb = new StringBuilder();
-		try (BufferedReader br = new BufferedReader(new FileReader("images/inputfile.txt"))) {
+		try (BufferedReader br = new BufferedReader(new FileReader(input_file_name ))) {
 		    String line;
 		    while ((line = br.readLine()) != null) {
 		        System.out.println(line);
