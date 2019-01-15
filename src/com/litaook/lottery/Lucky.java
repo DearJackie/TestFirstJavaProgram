@@ -1,11 +1,11 @@
 package com.litaook.lottery;
 
-import java.awt.Dimension;
-import java.awt.Toolkit;
+//import java.awt.Dimension;
+//import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
-import java.awt.Font;
+//import java.awt.Font;
 import java.io.File;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -14,18 +14,34 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.imageio.ImageIO;
-import javax.swing.BorderFactory;
+/*import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
+*/
+import java.awt.*;
+import javax.swing.*;
+/*
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextField;*/
+//import javafx.scene.text.Font;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 //import com.litaook.lottery.util.CopyFile;
+import com.litaook.lottery.OpenL;
 
 /**
  * 抽奖主程序 annual_party_new是备用照片目录，存放所有待抽奖人照片，建议使用人名作为文件名；<br/>
@@ -51,6 +67,7 @@ public class Lucky implements ActionListener {
 	// 显示结果标签
 	JLabel phaseIconLabel = null, phaseResult = null, phaseBlank1 = null,
 			phaseBlank2 = null;
+   	OpenL fileDiag = null;
 
 	// 屏幕宽
 	int screenWidth = 0;
@@ -77,12 +94,10 @@ public class Lucky implements ActionListener {
 	String rootDir = new StringBuffer(System.getProperty("user.dir")).append(
 			File.separator).toString();
 	// 图片目录
-	final static String IMAGE_DIR = "images/";
-	final static String WINNER_DIR = "winners/";
+	//final static String IMAGE_DIR = "images/";
+	//final static String WINNER_DIR = "winners/";
 	String WELCOME_IMAGE = new StringBuffer("welcome").append(separator).append("start.jpg").toString();
-	String input_file_name = new StringBuffer("images").append(separator).append("inputfile.txt").toString();
-	Font bigFont = new Font("Arial", Font.BOLD, 60);
-	Font startFont = new Font("Arial", Font.BOLD, 32);
+	String input_file_name = new StringBuffer("images").append(separator).append("inputfile.txt").toString(); // ""
 
 	// Constructor
 	public Lucky() throws IOException {
@@ -100,9 +115,19 @@ public class Lucky implements ActionListener {
 		// 添加到主面板中
 		mainPanel.add(selectPanel);
 		mainPanel.add(displayPanel);
-		//displayPanel.add(selectPanel);
-		//mainPanel.add(resultPanel);
-
+/*
+		JButton open_btn = new JButton("Open");
+		JPanel button_panel = new JPanel();
+		int x = (screenWidth-DISPLAY_MARGIN*2-BUTTON_WIDTH)/2+DISPLAY_MARGIN+250;
+		int y = screenHeight - MARGIN * 2 - DOWN_HEIGHT;
+		int w = BUTTON_WIDTH;
+		int h = DOWN_HEIGHT;
+		button_panel.setBounds(x, y, w, h);
+		fileDiag = new OpenL(button_panel);
+		open_btn.addActionListener(fileDiag);
+		button_panel.add(open_btn);
+                mainPanel.add(button_panel);
+*/
 		// 添加插件，读取所有图片入数组
 		addWidgets();
 
@@ -113,6 +138,19 @@ public class Lucky implements ActionListener {
 	 * A simple example program that reads a into a String using StringBuilder.
 	 */
 	private void ReadTextFileToArray (){
+/*
+		if ( fileDiag.selected == 0 )
+                {
+			//new StringBuffer("images").append(separator).append("inputfile.txt").toString();
+			return;
+                }
+		input_file_name = fileDiag.getDir()+separator+fileDiag.getFileName();
+		log.debug(new StringBuffer("input_file_name: ").append(input_file_name));
+		if (input_file_name == "" )
+		{
+			return;
+		} */
+
 		StringBuilder sb = new StringBuilder();
 		try (BufferedReader br = new BufferedReader(new FileReader(input_file_name ))) {
 		    String line;
@@ -165,6 +203,7 @@ public class Lucky implements ActionListener {
 
 		// 图片显示区域面板
 		displayPanel = new JPanel();
+
 		// 图片显示区域大小设置
 		x = DISPLAY_MARGIN;
 		y = MARGIN;
@@ -172,14 +211,6 @@ public class Lucky implements ActionListener {
 		h = screenHeight - DOWN_HEIGHT - MARGIN * 3;
 		displayPanel.setBounds(x, y, w, h);
 
-		// 获奖显示区域面板
-		//resultPanel = new JPanel();
-		// 获奖显示区域大小
-		//x = screenWidth / 2 + MARGIN;
-		//y = screenHeight - MARGIN * 2 - DOWN_HEIGHT;
-		//w = RESULT_WIDTH;
-		//h = DOWN_HEIGHT;
-		//resultPanel.setBounds(x, y, w, h);
 		log.debug("end");
 	}
 
@@ -210,12 +241,12 @@ public class Lucky implements ActionListener {
 		// 创建控制按键
 		phaseChoice = new JButton("开始/停止");
 
-		phaseResult.setFont(bigFont);
-		//int vert_size =  screenHeight - DOWN_HEIGHT - MARGIN * 3;
-		//phaseResult.setLayoutY(vert_size/2-DOWN_HEIGHT);
-		phaseBlank1.setFont(bigFont);
-		phaseBlank2.setFont(bigFont);
-		phaseChoice.setFont(startFont);
+		Font font = phaseBlank1.getFont();
+	        phaseBlank1.setFont(font.deriveFont(Font.BOLD, 60f));
+	        phaseBlank2.setFont(font.deriveFont(Font.BOLD, 60f));
+	        phaseResult.setFont(font.deriveFont(Font.BOLD, 60f));
+		font = phaseChoice.getFont();
+	        phaseChoice.setFont(font.deriveFont(Font.BOLD, 32f));
 
 		// 显示第一张欢迎图片
 		// 读入图
@@ -238,25 +269,19 @@ public class Lucky implements ActionListener {
 				BorderFactory.createTitledBorder("操作区"),
 				BorderFactory.createEmptyBorder(5, 5, 5, 5)));
 
-		//resultPanel.setBorder(BorderFactory.createCompoundBorder(
-		//BorderFactory.createTitledBorder("结果区"),
-		//BorderFactory.createEmptyBorder(5, 5, 5, 5)));
-
 		// 图片区域设置边框
 		displayPanel.setBorder(BorderFactory.createCompoundBorder(
 				BorderFactory.createTitledBorder("抽奖区"),
 				BorderFactory.createEmptyBorder(5, 5, 5, 5)));
 
 		// 在显示面板上添加各
-		//selectPanel.add(phaseChoice);
-		//displayPanel.add(phaseIconLabel);
-		//resultPanel.add(phaseBlank1);
+//		displayPanel.add(phaseIconLabel);
+		displayPanel.setLayout(new GridBagLayout());
 		displayPanel.add(phaseBlank1);
 		displayPanel.add(phaseResult);
 		displayPanel.add(phaseBlank2);
 		selectPanel.add(phaseChoice);
-		//resultPanel.add(phaseResult);
-		//resultPanel.add(phaseBlank2);
+
 		log.debug("各显示Panel设置完毕");
 
 		// 给控制按键设置监听器
@@ -362,20 +387,6 @@ public class Lucky implements ActionListener {
 		log.debug("end");
 	}
 
-/*
-	public static void setUIFont(FontUIResource f) {
-		Enumeration keys = UIManager.getDefaults().keys();
-		while (keys.hasMoreElements()) {
-		    Object key = keys.nextElement();
-		    Object value = UIManager.get(key);
-		    if (value instanceof FontUIResource) {
-		        FontUIResource orig = (FontUIResource) value;
-		        Font font = new Font(f.getFontName(), orig.getStyle(), f.getSize());
-		        UIManager.put(key, new FontUIResource(font));
-		    }
-		}
-	    }
-*/
 	/**
 	 * 主函数
 	 * 
@@ -400,7 +411,7 @@ public class Lucky implements ActionListener {
 					.getCrossPlatformLookAndFeelClassName());
 			log.debug("setLookAndFeel() - 设置外观 - start & end");
 
-//                        setUIFont(new FontUIResource(new Font("Arial", 0, 20)));
+
 			// 设置frame参数
 			log.debug("Frame添加Panel");
 			frame.setContentPane(luck.mainPanel);

@@ -22,10 +22,86 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 //import com.litaook.lottery.util.CopyFile;
+
+class FileChooserTest extends JFrame {
+  private JTextField filename = new JTextField(), dir = new JTextField();
+
+  private JButton open = new JButton("Open"), save = new JButton("Save");
+
+  public FileChooserTest() {
+    JPanel p = new JPanel();
+    open.addActionListener(new OpenL());
+    p.add(open);
+    //save.addActionListener(new SaveL());
+    //p.add(save);
+    Container cp = getContentPane();
+    cp.add(p, BorderLayout.SOUTH);
+    dir.setEditable(false);
+    filename.setEditable(false);
+    p = new JPanel();
+    p.setLayout(new GridLayout(2, 1));
+    p.add(filename);
+    p.add(dir);
+    cp.add(p, BorderLayout.NORTH);
+  }
+
+  class OpenL implements ActionListener {
+    public void actionPerformed(ActionEvent e) {
+      JFileChooser c = new JFileChooser();
+      // Demonstrate "Open" dialog:
+      int rVal = c.showOpenDialog(FileChooserTest.this);
+      if (rVal == JFileChooser.APPROVE_OPTION) {
+        filename.setText(c.getSelectedFile().getName());
+        dir.setText(c.getCurrentDirectory().toString());
+      }
+      if (rVal == JFileChooser.CANCEL_OPTION) {
+        filename.setText("You pressed cancel");
+        dir.setText("");
+      }
+    }
+  }
+
+  class SaveL implements ActionListener {
+    public void actionPerformed(ActionEvent e) {
+      JFileChooser c = new JFileChooser();
+      // Demonstrate "Save" dialog:
+      int rVal = c.showSaveDialog(FileChooserTest.this);
+      if (rVal == JFileChooser.APPROVE_OPTION) {
+        filename.setText(c.getSelectedFile().getName());
+        dir.setText(c.getCurrentDirectory().toString());
+      }
+      if (rVal == JFileChooser.CANCEL_OPTION) {
+        filename.setText("You pressed cancel");
+        dir.setText("");
+      }
+    }
+  }
+
+  //public static void main(String[] args) {
+    //run(new FileChooserTest(), 250, 110);
+  //}
+
+  public static void run(JFrame frame, int width, int height) {
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    frame.setSize(width, height);
+    frame.setVisible(true);
+  }
+}
 
 /**
  * 抽奖主程序 annual_party_new是备用照片目录，存放所有待抽奖人照片，建议使用人名作为文件名；<br/>
@@ -80,9 +156,9 @@ public class Lucky implements ActionListener {
 	final static String IMAGE_DIR = "images/";
 	final static String WINNER_DIR = "winners/";
 	String WELCOME_IMAGE = new StringBuffer("welcome").append(separator).append("start.jpg").toString();
-	String input_file_name = new StringBuffer("images").append(separator).append("inputfile.txt");
-	Font bigFont = new Font("Arial", Font.BOLD, 60);
-	Font startFont = new Font("Arial", Font.BOLD, 32);
+	String input_file_name = new StringBuffer("images").append(separator).append("inputfile.txt").toString();
+	Font bigFont = new Font("Arial", Font.PLAIN, 60);
+	Font startFont = new Font("Arial", Font.PLAIN, 32);
 
 	// Constructor
 	public Lucky() throws IOException {
@@ -105,6 +181,9 @@ public class Lucky implements ActionListener {
 
 		// 添加插件，读取所有图片入数组
 		addWidgets();
+
+		// initiate the dialog box
+                run(new FileChooserTest(), 250, 110);
 
 		log.debug("end");
 	}
